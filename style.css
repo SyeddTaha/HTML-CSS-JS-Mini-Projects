@@ -1,0 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    color: white;
+    font-family: "Montserrat","Poppins" ,Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+    background-image: url(main-assets/web-bg.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+body::-webkit-scrollbar {
+    width: 0.8vw;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: rgb(252, 174, 25);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(88, 30, 210);
+    border-radius: 0.5vw;
+    border: 0.1vw solid rgb(255, 255, 255);
+}
+
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #d6634c;
+}
+
+nav{
+    width:100vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    backdrop-filter: blur(0.5vw);
+    position: fixed;
+    top:0;
+    z-index:5;
+  }
+  nav h1{
+    cursor:pointer;
+    font-size: 3vw;
+    width:45vw;
+    text-align: center;
+    background: linear-gradient(to right, rgb(17, 171, 248), rgb(238, 23, 220),rgb(252, 167, 10));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.15vw;
+  }
+
+  /* Main styles start */
+
+.main-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 40vh 40vh 40vh;
+    column-gap: 3vw;
+    row-gap: 3vw;
+    margin:5vw;
+    margin-top:15vh;;
+    padding: 2vw;
+}
+
+.div-card {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 3vw;
+    border:0.1vw solid rgba(255, 255, 255, 0.349);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.096);
+    backdrop-filter: blur(0.4vw);
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.div-card::before,
+.div-card::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3vh;
+    background: linear-gradient(to right, rgb(17, 171, 248), rgb(238, 23, 220),rgb(252, 167, 10));
+    transition: width 0.3s ease-in-out;
+}
+
+.div-card::before {
+    top: 0;
+    left: 0;
+}
+
+.div-card::after {
+    bottom: 0;
+    right: 0;
+}
+
+.div-card:hover::before,
+.div-card:hover::after {
+    width: 100%;
+}
+
+.div-card:hover h2,
+.div-card:hover p {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+.div-card h2{
+    font-size: 5.1vw;
+    line-height: 4vw;
+    letter-spacing: -0.2vw;
+    text-align: center;
+    background: linear-gradient(180deg,rgb(251, 255, 0),rgb(237, 93, 57));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
